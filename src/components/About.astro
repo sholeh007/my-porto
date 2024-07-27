@@ -1,16 +1,17 @@
 ---
 import Link from "./UI/Link.astro"
 import Text from "./UI/Text.astro"
+import Title from "./UI/Title.astro"
 ---
 
 <section class='py-24 space-y-4' id='about'>
-  <h1 class='text-zinc-100 uppercase font-bold text-xl'>About Me</h1>
-  <Text>
-    I'm a frontend developer, javascript enthusiast and content creator. I currently
+  <Title title='About me' />
+  <Text size='md:text-lg'>
+    I'm a frontend developer, javascript enthusiast and content developer. I currently
     <Link href='#work' cls='underline'>work</Link> as self-employed professional who creates
     apps.
   </Text>
-  <Text>
+  <Text size='md:text-lg'>
     I create educational content for developers, teaching them about web development,
     JavaScript, TypeScript, React, Next.js, and more. This comes in the form of a video.
     You can watch it on <Link
@@ -20,5 +21,5 @@ import Text from "./UI/Text.astro"
       rel='noopener noreferrer'>my youtube channel</Link
     >.
   </Text>
-  <Text> Outside of technology, I like to take a leisurely walk. </Text>
+  <Text size='md:text-lg'> Outside of technology, I like to take a leisurely walk. </Text>
 </section>

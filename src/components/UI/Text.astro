@@ -1,3 +1,7 @@
-<p class='text-zinc-400 text-lg tracking-wider'>
+---
+const { size = "text-base", color = "text-zinc-400" } = Astro.props
+---
+
+<p class:list={["tracking-wider leading-relaxed", size, color]}>
   <slot />
 </p>
