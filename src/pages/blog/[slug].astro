@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content"
+import MainLayout from "../../layouts/Default.astro"
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog")
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }))
+}
+
+const { post } = Astro.props
+const { Content } = await post.render()
+---
+
+<MainLayout>
+  <div class='mt-8 mb-12'>
+    <h1 class='text-zinc-100 text-2xl md:text-3xl font-bold'>{post.data.title}</h1>
+    <p class='text-zinc-400 mb-8 mt-2 italic'>
+      {post.data.publishDate.toISOString().slice(0, 10)}
+    </p>
+    <article
+      class='prose prose-zinc prose-p:text-justify dark:prose-invert prose-h3:font-bold prose-h3:text-lg prose-p:text-zinc-200 prose-p:text-lg prose-p:md:text-xl max-w-none'
+    >
+      <Content />
+    </article>
+  </div>
+</MainLayout>
