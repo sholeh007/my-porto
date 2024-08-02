@@ -1,4 +1,5 @@
 ---
+import { AstroSeo } from "@astrolib/seo"
 import { ViewTransitions } from "astro:transitions"
 import Footer from "../components/Footer.astro"
 import Navbar from "../components/Navbar.astro"
@@ -9,7 +10,17 @@ import Navbar from "../components/Navbar.astro"
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <title>Muhammad Sholehudin</title>
+    <AstroSeo
+      title='Muhammad Sholehudin'
+      description='My Porto is a portfolio and blog about programming. I write about my experiences, my thoughts, and my ideas.'
+      canonical='https://muhsholehudin.pages.dev'
+      openGraph={{
+        title: "Muhammad Sholehudin",
+        description:
+          "My Porto is a portfolio and blog about programming. I write about my experiences, my thoughts, and my ideas.",
+        url: "https://muhsholehudin.pages.dev",
+      }}
+    />
     <ViewTransitions />
   </head>
   <body class='bg-zinc-950'>
