@@ -6,7 +6,7 @@ import MainLayout from "../../layouts/Default.astro"
 export async function getStaticPaths() {
   const posts = await getCollection("blog")
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: decodeURI(post.slug) },
     props: { post },
   }))
 }
